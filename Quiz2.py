@@ -1,6 +1,3 @@
-#Created by Zach Winters, TEC 284 Quiz 2
-#Importing the required libraries
-#from gpiozero import Button, LED
 from gpiozero import Button, RGBLED
 from time import sleep
 
@@ -16,6 +13,7 @@ def check_buttons():
     red = red_button.is_pressed
     green = green_button.is_pressed
     blue = blue_button.is_pressed
+    
     if red and not green and not blue:
         print("The Red Button has been pressed!")
         rgb_led.color = (1, 0, 0)  
@@ -40,11 +38,13 @@ def check_buttons():
     else:
         # No buttons pressed
         rgb_led.color = (0, 0, 0)
-        #Main loop, ensuring button states are continously checked rather than once!
+
+#Main loop, ensuring button states are continously checked rather than once!
 
 while True:
         check_buttons()
         sleep(0.1)  
+
 
 
         
