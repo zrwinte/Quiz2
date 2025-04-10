@@ -40,6 +40,11 @@ def check_buttons():
     else:
         # No buttons pressed
         rgb_led.color = (0, 0, 0)
+        #Main loop, ensuring button states are continously checked rather than once!
+
+while True:
+        check_buttons()
+        sleep(0.1)  
 
 
         
